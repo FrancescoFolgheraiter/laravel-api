@@ -30,6 +30,12 @@ class ProjectController extends Controller
     {
         $project = Project::where('slug', $slug)->firstOrFail();
 
-        return view('admin.projects.show', compact('project'));
+        return response()->json([
+            'code'=> 200,
+            'message'=>'ok',
+            'data'=> [
+                'projects'=> $project
+            ]
+        ]);
     }
 }
