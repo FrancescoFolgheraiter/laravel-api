@@ -16,7 +16,7 @@ class ProjectController extends Controller
     public function index()
     {
         //paginate mi permette di suddivide i dati in pagine, gli argomenti nel with() permettono l'Eager Loading
-        $projects = Project::with('type', 'technologies')->paginate(5);
+        $projects = Project::with('type', 'technologies')->paginate(6);
         //tramite questa funzione ritorno il file json con al struttura delineata nelle []
         return response()->json([
             'code'=> 200,
